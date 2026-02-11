@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5 p-5">
+  <h1>{{titulo ? "Actualizar Libro" : "Nuevo Libro"}}</h1>
+
+<form [formGroup]="frmLibro" novalidate (submit)="guardar()">
+  <input id="id" type="hidden" />
+
+  <div class="col-12 col-md-6">
+    <label for="titulo" class="form-label">Título</label>
+    <input id="titulo" type="text" class="form-control" formControlName="titulo" />
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="autor" class="form-label">Autor</label>
+    <input id="autor" type="text" class="form-control" formControlName="autor" />
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="genero" class="form-label">Género</label>
+    <input id="genero" type="text" class="form-control" formControlName="genero" />
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="anio_publicacion" class="form-label">Año Publicación</label>
+    <input id="anio_publicacion" type="number" class="form-control" formControlName="anio_publicacion" />
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="stock" class="form-label">Stock</label>
+    <input id="stock" type="number" class="form-control" formControlName="stock" />
+  </div>
+
+  <div class="col-12 col-md-6">
+    <button type="submit" class="btn btn-success" [disabled]="!frmLibro.valid">Guardar</button>
+    <button class="btn btn-secondary" [routerLink]="['/libros']">Cancelar</button>
+  </div>
+</form>
+
+</div>

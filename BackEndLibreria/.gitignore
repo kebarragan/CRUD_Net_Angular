@@ -1,0 +1,41 @@
+# =====================
+# Visual Studio / VS
+# =====================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =====================
+# Build results
+# =====================
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# =====================
+# ASP.NET Core
+# =====================
+appsettings.Development.json
+appsettings.Local.json
+
+# =====================
+# Logs
+# =====================
+*.log
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Publish
+# =====================
+publish/

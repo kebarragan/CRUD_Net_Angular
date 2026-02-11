@@ -1,0 +1,57 @@
+<div class="container mt-5 p-5">
+  <h1>Lista de Libros</h1>
+
+  <button
+    class="btn btn-outline-primary"
+    type="button"
+    routerLink="/nuevolibro"
+  >
+    Nuevo Libro
+  </button>
+
+  <div class="">
+    <table class="table tbale-responsive table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Género</th>
+          <th>Año Publicación</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (
+          libro of listaLibros();
+          track libro.id ?? libro.id;
+          let contador = $index
+        ) {
+          <tr>
+            <td>{{ contador + 1 }}</td>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.genero }}</td>
+            <td>{{ libro.anio_publicacion }}</td>
+            <td>{{ libro.stock }}</td>
+            <td>
+              <button
+                class="btn btn-outline-warning"
+                [routerLink]="['/editarlibro', libro.id]"
+              >
+                Editar
+              </button>
+              <button
+                class="btn btn-outline-danger"
+                (click)="eliminar(libro.id!)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
